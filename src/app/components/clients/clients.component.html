@@ -11,13 +11,13 @@
     </tr>
   </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let client of clients">
         <th scope="row"></th>
-          <td>george</td>
-          <td>kok</td>
-          <td>test@test</td>
-          <td>piraeus</td>
-          <td>gr</td>
+          <td>{{client.first_name}}</td>
+          <td>{{client.last_name}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.city}}</td>
+          <td>{{client.country}}</td>
       </tr>
     </tbody>
 </table>
