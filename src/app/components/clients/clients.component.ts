@@ -16,7 +16,7 @@ export class ClientsComponent implements OnInit {
   }
 
   getClientsData() {
-    this.dataService.getData().subscribe((response) => {
+    this.dataService.getAllClients().subscribe((response) => {
       this.clients = response;
     });
   }

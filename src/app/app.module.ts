@@ -12,12 +12,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: ClientsComponent },
-  { path: 'add-client', component: NewClientFormComponent }
+  { path: 'add-client', component: NewClientFormComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, ClientsComponent, NewClientFormComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,  RouterModule.forRoot(appRoutes)],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    ClientsComponent,
+    NewClientFormComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

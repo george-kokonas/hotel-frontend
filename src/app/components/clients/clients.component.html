@@ -4,7 +4,7 @@
   <h4>Clients List</h4>
   <a routerLink="/add-client" class="btn btn-success">Create New Client</a>
 </div>
-<br>
+<br />
 
 <table class="table">
   <thead>
@@ -17,14 +17,14 @@
       <th scope="col">Country</th>
     </tr>
   </thead>
-    <tbody>
-      <tr *ngFor="let client of clients">
-        <th scope="row"></th>
-          <td>{{client.first_name}}</td>
-          <td>{{client.last_name}}</td>
-          <td>{{client.email}}</td>
-          <td>{{client.city}}</td>
-          <td>{{client.country}}</td>
-      </tr>
-    </tbody>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <th scope="row"></th>
+      <td>{{ client.first_name }}</td>
+      <td>{{ client.last_name }}</td>
+      <td>{{ client.email }}</td>
+      <td>{{ client.city }}</td>
+      <td>{{ client.country }}</td>
+    </tr>
+  </tbody>
 </table>

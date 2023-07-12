@@ -15,7 +15,10 @@ export class NewClientFormComponent implements OnInit {
     this.form = new FormGroup({
       first_name: new FormControl('', [Validators.required]),
       last_name: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
       city: new FormControl('', [Validators.required]),
       country: new FormControl('', [Validators.required]),
     });
@@ -23,12 +26,14 @@ export class NewClientFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get f() {
+  get formControls() {
     return this.form.controls;
   }
 
   submit() {
-    console.log(this.form.value);
-
+    this.dataService.createClient(this.form.value).subscribe((res) => {
+      console.log(res, 'success');
+      this.router.navigateByUrl('/');
+    });
   }
 }
