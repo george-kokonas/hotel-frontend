@@ -18,7 +18,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     ClientsComponent,
     NewClientFormComponent,
   ],
