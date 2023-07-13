@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { NewClientFormComponent } from './components/new-client-form/new-client-form.component';
 
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     ClientsComponent,
     NewClientFormComponent,
   ],
