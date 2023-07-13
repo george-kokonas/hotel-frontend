@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Client } from '../model/client';
 
 @Injectable({
@@ -26,6 +26,12 @@ export class DataService {
       'http://localhost:8000/api/clients/create',
       JSON.stringify(client),
       this.httpOptions
+    );
+  }
+
+  deleteClient(id: number): Observable<any> {
+    return this.httpClient.delete(
+      `http://localhost:8000/api/clients/delete/${id}`
     );
   }
 }

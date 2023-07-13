@@ -32,7 +32,6 @@ export class NewClientFormComponent implements OnInit {
 
   submit() {
     this.dataService.createClient(this.form.value).subscribe((res) => {
-      console.log(res, 'success');
       this.router.navigateByUrl('/');
     });
   }

@@ -9,6 +9,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class ClientsComponent implements OnInit {
   clients: Client[] = [];
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
@@ -18,6 +19,12 @@ export class ClientsComponent implements OnInit {
   getClientsData() {
     this.dataService.getAllClients().subscribe((response) => {
       this.clients = response;
+    });
+  }
+
+  deleteClient(clientId: number) {
+    this.dataService.deleteClient(clientId).subscribe(() => {
+      this.clients = this.clients.filter((client) => client.id !== clientId);
     });
   }
 }
